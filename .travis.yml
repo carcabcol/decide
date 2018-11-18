@@ -8,7 +8,7 @@ env:
 before_install: 
 - cd decide
 install: 
-- pip install -r requirements.txt
+- pip install -r .../requirements.txt
 before_script: 
 - psql -c "create user decide with password 'decide'"
 - psql -c "create database decide owner decide"
