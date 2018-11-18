@@ -5,6 +5,8 @@ language: python
       - postgres
     env: # => 4
       -DJANGO=2.0 DB=postgres
+    before_install: 
+      -cd decide
     install: # => 5
       - pip install -r requirements.txt
     before_script: # => 6
