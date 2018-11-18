@@ -1,17 +1,17 @@
 language: python 
     python: 
-      "2.7"
-    services: 
-      postgres
-    env: # => 4
-      DJANGO=2.0 DB=postgres
+      - "2.7"
+    services:
+      - postgresql
+    env: 
+      - DJANGO=2.0 DB=postgres
     before_install: 
-      cd decide
-    install: # => 5
-      pip install -r requirements.txt
-    before_script: # => 6
-      psql -c "create user decide with password 'decide'"
-      psql -c "create database decide owner decide"
-      python manage.py migrate
-    script: # => 7
-      python manage.py test
+      - cd decide
+    install: 
+      - pip install -r requirements.txt
+    before_script: 
+      - psql -c "create user decide with password 'decide'"
+      - psql -c "create database decide owner decide"
+      - python manage.py migrate
+    script: 
+      - python manage.py test
