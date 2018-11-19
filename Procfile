@@ -1,0 +1,1 @@
+web: cd decide;cp local_settings.example.py local_settings.py;psql -c "create user decide with password 'decide'";psql -c "create database decide owner decide";python manage.py migrate;python manage.py runserver;
