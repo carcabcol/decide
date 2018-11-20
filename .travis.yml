@@ -1,23 +1,23 @@
-language: python 
-python: 
+language: python
+python:
 - "3.6"
 services:
 - postgresql
-env: 
+env:
 - DJANGO=2.0 DB=postgres
 global:
   - PGPORT=5432
-before_install: 
+before_install:
 - cd decide
-install: 
+install:
 - pip install -r ../requirements.txt
-before_script: 
-- cp local_settings.example.py local_settings.py
+before_script:
+- cp ../local_settings.travis.py local_settings.py
 - psql -c "create user decide with password 'decide'"
 - psql -c "create database decide owner decide"
 - python manage.py migrate
-script: 
+script:
 - python manage.py test
 addons:
   postgresql: "9.6"
-#Edited by Carlos  
+#Edited by Carlos
