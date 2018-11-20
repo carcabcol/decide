@@ -14,7 +14,7 @@ MODULES = [
 ]
 
 APIS = {
-    'authentication': 'http://localhost:8000
+    'authentication': 'http://localhost:8000',
     'base': 'http://localhost:8000',
     'booth': 'http://localhost:8000',
     'census': 'http://localhost:8000',
